@@ -1,2 +1,15 @@
+Enforcing Time Constraints
+Seorang siswa tidak dapat hadir lebih dari satu mata pelajaran dengan cara find or create
+(find or create yaitu jika datanya sudah ada maka akan di ignore dengan cara set field UNIQUE).
+Dilihat dari student join date, jika ada student yang masuk kelas pada hari yang sama
+maka tidak dilakukan insert data.
 
+Berlaku juga untuk para guru. Jadi validasi cukup dilakukan dengan query INSERT OR IGNORE
+dan set UNIQUE pada field student_join_date pada table classes. Isi dari class schedule
+yaitu kelas hari senin/rabu/jumat atau selasa/kamis yang merupakan foreign key dari table classes.
 
+Cross-listing classes 
+Cross-listing classes dapat dilakukan dalam schema yang sudah dibuat. karena pada tabel classes
+ada lesson_id yang merupakan foreign key dari tabel Lessons dan course_id dalam tabel classes
+yang merupakan foreign key dari tabel courses. Jadi memungkinkan pada 1 jurusan/course ada lesson
+/mata pelajaran yang sama
