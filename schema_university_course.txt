@@ -1,2 +1,15 @@
+Release 2: Enforcing time constraints
 
+Siswa tidak akan dapat menghadiri lebih dari satu mata pelajaran di saat yg bersamaan, karena di setiap kelas sudah ada jadwal dan
+mata pelajaran yg di set unique di dalam kelas tersebut. Oleh karena itu tidak akan ada jadwal yg kembar.
 
+Kita dapat mendetect jika terjadi pelanggaran yaitu jika siswa/guru memasukkan kelas/pelajaran ke dalam agendanya dengan jadwal yg sama.
+Jadwal tersebut tidak akan terbentuk (terbentur dengan unique).
+
+Validasi lebih baik dilakukan disisi database, karena database lebih erat berhubungan dengan meng-create data (jadwal), jika terjadi
+pelanggaran, maka create tidak akan terjadi. Namun jika dilakukan di Javascript, create data masih bisa terjadi.
+
+Cross-listing Classes
+Berdasarkan keterangan di skema database kita, 1 jurusan dapat memiliki banyak kelas dan kelas berada di bawah jurusan.
+Dengan prinsip one-to-many (courses -> classes), cross-listing dapat dilakukan. Karena siswa dapat memiliki banyak class dan dan class memiliki
+banyak lessons terlepas dari jurusan kelas tersebut.
